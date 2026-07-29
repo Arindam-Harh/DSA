@@ -5,19 +5,16 @@ class Solution {
         for(char c : s.toCharArray()){
             arr[c-'a']++;
         }
-        StringBuilder sb1 = new StringBuilder();
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         String mid = "";
         for(int i=0;i<26;i++){
             char ch = (char)('a'+i);
             while(arr[i] >= 2){
-                sb1.append(ch);
-                arr[i]--;
-                sb2.append(ch);
-                arr[i]--;
+                sb.append(ch);
+                arr[i] -= 2;
             }
             if(arr[i] == 1) mid = String.valueOf(ch);
         }
-        return sb1.toString() + mid + sb2.reverse().toString();
+        return sb.toString() + mid + sb.reverse().toString();
     }
 }
