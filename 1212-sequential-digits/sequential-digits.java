@@ -1,10 +1,4 @@
 class Solution {
-    static int firstDigit(int n) {
-        while (n >= 10) {
-            n /= 10;
-        }
-        return n;
-    }
     public List<Integer> sequentialDigits(int low, int high) {
         List<Integer> list = new ArrayList<>();
         fun(low, high, list);
