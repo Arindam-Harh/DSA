@@ -1,7 +1,7 @@
 class Solution {
     public List<String> generateParenthesis(int n) {
-        // return parenthesis1(n, n*2, "", 0, 0);
-        return parenthesis2(n, "", 0, 0);
+        return parenthesis1(n, n*2, "", 0, 0);
+        // return parenthesis2(n, "", 0, 0);
     }
     static List<String> parenthesis1(int limit, int n, String p, int open, int close){
         if(n == 0){
