@@ -1,5 +1,6 @@
 class Solution {
     public List<String> letterCombinations(String digits) {
+        if(digits.isEmpty()) return new ArrayList<>();
         String[] map = {
             "", "", "abc", "def", "ghi",
             "jkl", "mno", "pqrs", "tuv", "wxyz"
