@@ -10,11 +10,9 @@ class Solution {
         }
         List<String> ans = new ArrayList<>();
         if(p.isEmpty() || p.charAt(p.length()-1) != '0'){
-            List<String> l1 = strings(p + '0', n-1);
-            ans.addAll(l1);
+            ans.addAll(strings(p + '0', n-1));
         }
-        List<String> l2 = strings(p + '1', n-1);
-        ans.addAll(l2);
+        ans.addAll(strings(p + '1', n-1));
         return ans;
     }
 }
