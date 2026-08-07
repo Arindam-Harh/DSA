@@ -11,12 +11,10 @@ class Solution {
             ans.add(list);
             return;
         }
-        if(start <= n){
-            for(int i=start;i<=n;i++){
-                p.add(i);
-                combinations(i+1, p, n, size, ans);
-                p.remove(p.size()-1);
-            }
+        for(int i=start;i<=n;i++){
+            p.add(i);
+            combinations(i+1, p, n, size, ans);
+            p.remove(p.size()-1);
         }
     }
 }
