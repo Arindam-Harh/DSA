@@ -6,17 +6,13 @@ class Solution {
         for(String str : arr){
             l = Math.max(l, str.length());
         }
-        StringBuilder sb = new StringBuilder();
         for(int i=0;i<l;i++){
+            StringBuilder sb = new StringBuilder(l);
             for(String str : arr){
-                if(i < str.length()){
-                    sb.append(str.charAt(i));
-                }else{
-                    sb.append(" ");
-                }
+                if(i < str.length()) sb.append(str.charAt(i));
+                else sb.append(" ");
             }
             list.add(sb.toString().stripTrailing());
-            sb.setLength(0);
         }
         return list;
     }
