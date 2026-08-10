@@ -13,8 +13,7 @@ class Solution {
         if (i == m - 1 && j == n - 1) {
             return 1;
         }
-        if (dp[i][j] != -1)
-            return dp[i][j];
+        if (dp[i][j] != -1) return dp[i][j];
         int right = 0;
         int down = 0;
         if (i >= 0 && i < m - 1) {
