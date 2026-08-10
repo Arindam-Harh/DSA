@@ -18,10 +18,10 @@ class Solution {
         int right = 0;
         int down = 0;
         if (i >= 0 && i < m - 1) {
-            right += paths(i + 1, j, m, n,dp);
+            down += paths(i + 1, j, m, n,dp);
         }
         if (j >= 0 && j < n - 1) {
-            down  += paths(i, j + 1, m, n, dp);
+            right  += paths(i, j + 1, m, n, dp);
         }
         dp[i][j] = right + down;
         return dp[i][j];
