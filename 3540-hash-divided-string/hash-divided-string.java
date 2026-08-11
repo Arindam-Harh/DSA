@@ -3,9 +3,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         for(int i=0;i<s.length();i+=k){
             String str = s.substring(i, i+k);
-            int val = process(str);
-            char ch = (char) ('a' + val);
-            sb.append(ch);
+            sb.append((char)('a' + process(str)));
         }
         return sb.toString();
     }
