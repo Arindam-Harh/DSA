@@ -9,8 +9,8 @@ class Solution {
     }
     static int process(String s){
         int v = 0;
-        for(int i=0;i<s.length();i++){
-            v += s.charAt(i) - 'a';
+        for(char ch : s.toCharArray()){
+            v += ch - 'a';
         }
         return v%26;
     }
