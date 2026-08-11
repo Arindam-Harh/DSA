@@ -6,16 +6,17 @@ class Solution {
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 if(obstacleGrid[i][j] != 1) dp[i][j] = -1;
+                else dp[i][j] = -99;
             }
         }
         return paths(0, 0, m, n, dp);
     }
     static int paths(int i, int j, int m, int n, int[][] dp){
         if(i == m-1 && j == n-1){
-            if(dp[i][j] == 0) return 0;
+            if(dp[i][j] == -99) return 0;
             return 1;
         }
-        if(dp[i][j] == 0) return 0;
+        if(dp[i][j] == -99) return 0;
         if(dp[i][j] != -1) return dp[i][j];
         int down = 0;
         int right = 0;
