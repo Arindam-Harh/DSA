@@ -3,11 +3,8 @@ class Solution {
         int maxElem = prices[prices.length-1];
         int maxDiff = 0;
         for(int i=prices.length - 2;i>=0;i--){
-            if(prices[i] >= maxElem) maxElem = prices[i];
-            else{
-                int profit = maxElem - prices[i];
-                maxDiff = Math.max(profit, maxDiff);
-            }
+            maxElem = Math.max(maxElem, prices[i]);
+            maxDiff = Math.max(maxDiff, maxElem - prices[i]);
         }
         return maxDiff;
     }
