@@ -1,11 +1,11 @@
 class Solution {
     public int maxProfit(int[] prices) {
-        int maxElem = prices[prices.length-1];
-        int maxDiff = 0;
+        int maxPrice = prices[prices.length-1];
+        int maxProfit = 0;
         for(int i=prices.length - 2;i>=0;i--){
-            maxElem = Math.max(maxElem, prices[i]);
-            maxDiff = Math.max(maxDiff, maxElem - prices[i]);
+            maxPrice = Math.max(maxPrice, prices[i]);
+            maxProfit = Math.max(maxProfit, maxPrice - prices[i]);
         }
-        return maxDiff;
+        return maxProfit;
     }
 }
