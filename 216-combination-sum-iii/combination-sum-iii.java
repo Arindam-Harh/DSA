@@ -10,11 +10,9 @@ class Solution {
             return;
         }
         for(int i=start;i<=9;i++){
-            if(p.isEmpty() || p.get(p.size()-1) < i){
-                p.add(i);
-                combinations(i+1, p, n-i, k, ans);
-                p.remove(p.size()-1);
-            }
+            p.add(i);
+            combinations(i+1, p, n-i, k, ans);
+            p.remove(p.size()-1);
         }
     }
 }
