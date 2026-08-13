@@ -5,8 +5,9 @@ class Solution {
         return ans;
     }
     static void combinations(int start, List<Integer> p, int n, int k, List<List<Integer>> ans){
-        if(p.size() == k && n == 0){
-            ans.add(new ArrayList<>(p));
+        if(n < 0) return;
+        if(p.size() == k){
+            if(n == 0) ans.add(new ArrayList<>(p));
             return;
         }
         for(int i=start;i<=9;i++){
