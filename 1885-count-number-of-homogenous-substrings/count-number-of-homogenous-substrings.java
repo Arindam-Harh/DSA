@@ -10,7 +10,7 @@ class Solution {
                 count = 1;
             }
         }
-        ans = (ans + count * (count + 1) / 2) % MOD;
+        ans = (ans + count*(count+1)/2) % MOD;
         return (int) ans;
     }
 }
