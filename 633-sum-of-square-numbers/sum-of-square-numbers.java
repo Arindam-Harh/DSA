@@ -3,9 +3,10 @@ class Solution {
         long low = 0;
         long high = (long) Math.sqrt(c);
         while(low <= high){
-            if((low*low + high*high) > c) high--;
-            else if((low*low + high*high) < c) low++;
-            else if((low*low + high*high) == c) return true;
+            long sum = low*low + high*high;
+            if(sum == c) return true;
+            else if(sum < c) low++;
+            else if(sum > c) high--;
         }
         return false;
     }
