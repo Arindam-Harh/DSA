@@ -3,7 +3,6 @@ class Solution {
     public int numSub(String s) {
         long count = 0;
         long ans = 0;
-
         for(char ch : s.toCharArray()){
             if(ch == '1') count++;
             else {
@@ -11,7 +10,6 @@ class Solution {
                 count = 0;
             }
         }
-        ans = (ans + count*(count+1)/2) % MOD;
-        return (int) ans;
+        return (int) (ans + count*(count+1)/2) % MOD;
     }
 }
