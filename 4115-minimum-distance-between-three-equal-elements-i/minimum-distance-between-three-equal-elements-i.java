@@ -1,9 +1,8 @@
 class Solution {
     public int minimumDistance(int[] nums) {
         if(nums.length <= 2) return -1;
-        int n = nums.length;
         HashMap<Integer, List<Integer>> map = new HashMap<>();
-        for(int i=0;i<n;i++){
+        for(int i=0;i<nums.length;i++){
             map.putIfAbsent(nums[i], new ArrayList<>());
             map.get(nums[i]).add(i);
         }
