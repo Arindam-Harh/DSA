@@ -15,13 +15,11 @@ class Solution {
                 alt = true;
             }
         }
-        String str1 = sb1.toString();
-        String str2 = sb2.toString();
         int count1 = 0;
         int count2 = 0;
         for(int i=0;i<n;i++){
-            if(s.charAt(i) != str1.charAt(i)) count1++;
-            if(s.charAt(i) != str2.charAt(i)) count2++;
+            if(s.charAt(i) != sb1.charAt(i)) count1++;
+            if(s.charAt(i) != sb2.charAt(i)) count2++;
         }
         return Math.min(count1, count2);
     }
