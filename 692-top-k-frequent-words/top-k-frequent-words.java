@@ -21,7 +21,6 @@ class Solution {
             for (int j = 0; j < w.size(); j++) {
                 if (map.get(w.get(j)).equals(list.get(0))) {
                     ans.add(w.get(j));
-                    if(ans.size() == k) break;
                     list.remove(0);
                     w.remove(j);
                     break;
