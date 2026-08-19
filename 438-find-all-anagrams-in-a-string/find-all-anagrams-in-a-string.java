@@ -5,10 +5,8 @@ class Solution {
         if(n < l) return  new ArrayList<>();
         p = sorted(p);
         List<Integer> idx = new ArrayList<>();
-        String str = s.substring(0, l);
-        if(p.equals(sorted(str))) idx.add(0);
-        for(int i=1;i<=n-l;i++){
-            str = s.substring(i, i+l);
+        for(int i=0;i<=n-l;i++){
+            String str = s.substring(i, i+l);
             if(p.equals(sorted(str))) idx.add(i);
         }
         return idx;
