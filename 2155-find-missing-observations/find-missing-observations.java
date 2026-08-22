@@ -7,7 +7,7 @@ class Solution {
         if(remaining < n || remaining > 6*n) return new int[0];
         int[] res = new int[n];
         for(int i=0;i<res.length;i++){
-            res[i] = (int) Math.ceil(remaining/n);
+            res[i] = (int) Math.ceil((double) remaining / n);
             remaining -= res[i];
             n--;
         }
