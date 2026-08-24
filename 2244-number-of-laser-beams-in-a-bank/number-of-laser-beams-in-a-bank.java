@@ -7,11 +7,9 @@ class Solution {
             for(char ch : str.toCharArray()){
                 if(ch == '1') count++;
             }
-            if(count == 0) res += 0;
-            else {
-                res += prev * count;
-                prev = count;
-            }
+            if(count == 0) continue;
+            res += prev * count;
+            prev = count;
         }
         return res;
     }
