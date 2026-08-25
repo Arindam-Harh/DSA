@@ -7,14 +7,14 @@ class Solution {
             list.add(r);
             n /= 10;
         }
-        fun(new ArrayList<>(), list, ans, list.size());
+        fun(new ArrayList<>(), list, ans);
         for(int i=0;i<ans.size();i++){
             n = ans.get(i);
             if(n > 0 && (n & (n - 1)) == 0) return true;
         }
         return false;
     }
-    static void fun(List<Integer> p, List<Integer> up, List<Integer> ans, int n){
+    static void fun(List<Integer> p, List<Integer> up, List<Integer> ans){
         if(up.isEmpty()){
             if(p.get(0) != 0) ans.add(toNumber(p));
             return;
@@ -23,7 +23,7 @@ class Solution {
         for(int i=0;i<=p.size();i++){
             List<Integer> newList = new ArrayList<>(p);
             newList.add(i, e);
-            fun(newList, up.subList(1, up.size()), ans, n);
+            fun(newList, up.subList(1, up.size()), ans);
         } 
     }
     static int toNumber(List<Integer> list) {
