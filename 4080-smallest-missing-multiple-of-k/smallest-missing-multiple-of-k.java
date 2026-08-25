@@ -3,10 +3,7 @@ class Solution {
         HashSet<Integer> set = new HashSet<>();
         for(int n : nums) set.add(n);
         int i=1;
-        while(i <= set.size()){
-            if(!set.contains(i*k)) break;
-            i++;
-        }
+        while(set.contains(i*k)) i++;
         return i*k;
     }
 }
