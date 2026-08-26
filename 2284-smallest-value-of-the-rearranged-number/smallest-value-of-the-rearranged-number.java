@@ -20,17 +20,17 @@ class Solution {
             }
             sum = -sum;
         }else{
-            List<Long> zeros = new ArrayList<>(); 
             Collections.sort(list);
             int i = 0;
+            int zero = 0;
             while(list.get(i) == 0){
-                zeros.add(list.get(i));
+                zero++;
                 i++;
             }
             sum = list.get(i);
-            while(!zeros.isEmpty()){
+            while(zero != 0){
                 sum = sum*10 + 0;
-                zeros.remove(0);
+                zero--;
             }
             for(int j=i+1;j<list.size();j++){
                 sum = sum*10 + list.get(j);
