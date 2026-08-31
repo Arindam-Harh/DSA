@@ -5,11 +5,8 @@ class Solution {
         int j = discounts.length - 1;
         double total = 0;
         for(int i=prices.length-1;i>=0;i--){
-            if(j >= 0){
-                total += prices[i] * (100.0 - discounts[j--]) / 100.0;
-            }else{
-                total += prices[i];
-            }
+            if(j >= 0) total += prices[i] * (100.0 - discounts[j--]) / 100.0;
+            else total += prices[i];
         }
         return total;
     }
