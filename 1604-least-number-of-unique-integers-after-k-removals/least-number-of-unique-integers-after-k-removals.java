@@ -11,16 +11,12 @@ class Solution {
         for (Map.Entry<Integer, Integer> entry : list) {
             sortedMap.put(entry.getKey(), entry.getValue());
         }
+        int uniqueValues = map.size();
         for(var entry : sortedMap.entrySet()){
             if(entry.getValue() <= k){
                 k -= entry.getValue();
-                sortedMap.put(entry.getKey(), 0);
+                uniqueValues--;
             }else break;
-        }
-        int n = arr.length;
-        int uniqueValues = 0;
-        for(var entry : sortedMap.entrySet()){
-            if(entry.getValue() != 0) uniqueValues++;
         }
         return uniqueValues;
     }
