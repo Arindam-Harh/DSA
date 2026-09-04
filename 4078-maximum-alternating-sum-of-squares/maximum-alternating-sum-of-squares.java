@@ -7,8 +7,9 @@ class Solution {
         Arrays.sort(nums);
         long ans = 0;
         for(int i=0;i<n;i++){
-            if(i < n/2) ans -= Math.pow(nums[i], 2);
-            else ans += Math.pow(nums[i], 2);
+            long sq = (long) Math.pow(nums[i], 2);
+            if(i < n/2) ans -= sq;
+            else ans += sq;
         }
         return ans;
     }
