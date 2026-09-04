@@ -7,6 +7,6 @@ class Solution {
             else minEven = Math.min(n, minEven);
         }
         if(minOdd == Integer.MAX_VALUE || minEven == Integer.MAX_VALUE) return true;
-        return !(minOdd >= minEven);
+        return minEven - minOdd >= 1;
     }
 }
