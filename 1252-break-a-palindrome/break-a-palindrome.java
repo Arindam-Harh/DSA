@@ -3,14 +3,13 @@ class Solution {
         int n = palindrome.length();
         if(n <= 1) return "";
         char[] res = palindrome.toCharArray();
-        for(int i=0;i<n;i++){
-            if(i == n/2 && i != n-1) continue;
+        for(int i=0;i<n/2;i++){
             if(res[i] != 'a'){
                 res[i] = 'a';
-                break;
+                return new String(res);
             }
-            if(i == n-1) res[i] = 'b';
         }
+        res[n-1] = 'b';
         return new String(res);
     }
 }
