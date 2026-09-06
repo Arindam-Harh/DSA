@@ -7,9 +7,7 @@ class Solution {
         }
         while(!map.isEmpty()){
             int first = map.firstKey();
-            map.put(first, map.get(first)-1);
-            if(map.get(first) == 0) map.remove(first);
-            for(int i=1;i<groupSize;i++){
+            for(int i=0;i<groupSize;i++){
                 int next = first + i;
                 if(!map.containsKey(next)) return false;
                 map.put(next, map.get(next)-1);
