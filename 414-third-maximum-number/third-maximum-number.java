@@ -1,9 +1,8 @@
 class Solution {
-    static long low = Long.MIN_VALUE;
     public int thirdMax(int[] nums) {
-        long one = low;
-        long two = low;
-        long three = low;
+        long one = Long.MIN_VALUE;
+        long two = Long.MIN_VALUE;
+        long three = Long.MIN_VALUE;
         int count = 0;
         for(int n : nums){
             if(n == one || n == two || n == three) continue;
