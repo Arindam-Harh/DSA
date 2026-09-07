@@ -1,14 +1,25 @@
 class Solution {
+    static long low = Long.MIN_VALUE;
     public int thirdMax(int[] nums) {
-        TreeMap<Integer, Integer> map = new TreeMap<>();
+        long one = low;
+        long two = low;
+        long three = low;
+        int count = 0;
         for(int n : nums){
-            map.put(n, map.getOrDefault(n, 0)+1);
+            if(n == one || n == two || n == three) continue;
+            count++;
+            if(one < n) {
+                three = two;
+                two = one;
+                one = n;
+            }else if(two < n){
+                three = two;
+                two = n;
+            }else if(three < n){
+                three = n;
+            }
         }
-        if(map.size() < 3) return map.lastKey();
-        int k = map.lastKey();
-        for(int i = 1; i < 3; i++){
-            k = map.lowerKey(k);
-        }
-        return k;
+        if(count < 3) return (int) one;
+        return (int) three;
     }
 }
