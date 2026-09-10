@@ -11,11 +11,8 @@ class Solution {
             int f = map.firstKey();
             int freq = map.get(f);
             if(map.containsKey(2*f)){
-                if(f == 0){
-                    if(freq < 0) return new int[0];
-                }else{
-                    if (!map.containsKey(2 * f)) return new int[0];
-                }
+                if(f == 0 && freq < 2)return new int[0];
+                if (!map.containsKey(2 * f)) return new int[0];
                 map.put(2*f, map.get(2*f)-1);
                 if(map.get(2*f) == 0) map.remove(2*f); 
                 original[i++] = f;
