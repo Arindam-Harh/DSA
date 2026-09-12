@@ -1,8 +1,6 @@
 class Solution {
     public int jump(int[] nums) {
         int l = nums.length;
-        if(l <= 1) return 0;
-        if(l == 2) return 1;
         int i=0;
         int count = 1;
         while(i<l-1){
@@ -19,6 +17,6 @@ class Solution {
             count++;
             i = maxIndex;
         }
-        return -1;
+        return 0;
     }
 }
