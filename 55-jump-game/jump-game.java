@@ -2,7 +2,6 @@ class Solution {
     public boolean canJump(int[] nums) {
         int l = nums.length;
         if(l == 1) return true;
-        if(nums[0] == 0) return false;
         int i = 0;
         while(i<l-1){
             int n = nums[i];
