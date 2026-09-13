@@ -14,9 +14,7 @@ class Solution {
                 }
                 result.add(new int[]{f, s});
             }else{
-                i--;
                 result.add(new int[]{f, s});
-                i++;
             }
             if(i == intervals.length) break;
             f = intervals[i][0];
