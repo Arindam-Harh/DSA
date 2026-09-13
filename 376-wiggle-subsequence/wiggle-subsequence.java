@@ -4,8 +4,7 @@ class Solution {
         int count = 1;
         boolean up = false;
         boolean down = false;
-        int i = 0;
-        while(i<nums.length-1){
+        for(int i=0;i<nums.length-1;i++){
             if(nums[i+1] > nums[i]){
                 up = true;
                 if(down && i==0) count += 2;
@@ -16,11 +15,7 @@ class Solution {
                 if(up && i==0) count += 2;
                 else if(up) count++; // taking only one up
                 up = false;
-            }else {
-                i++;
-                continue;
-            };
-            i++;
+            }else  continue;
         }
         if(!down && !up) return count;
         return count + 1;
