@@ -1,23 +1,22 @@
 class Solution {
     public String customSortString(String order, String s) {
         char res[] = new char[s.length()];
+        int arr[] = new int[26];
         int i = 0;
-        HashMap<Character, Integer> map = new HashMap<>();
         for(char ch : s.toCharArray()){
-            map.put(ch, map.getOrDefault(ch, 0)+1);
+            arr[ch-'a']++;
         }
         for(char ch : order.toCharArray()){
-            while(map.containsKey(ch)){
+            while(arr[ch-'a'] > 0){
                 res[i++] = ch;
-                map.put(ch, map.get(ch)-1);
-                if(map.get(ch) == 0) map.remove(ch);
+                arr[ch-'a']--;
             }
         }
-        while(!map.isEmpty()){
-            Character ch = map.keySet().iterator().next();
-            res[i++] = ch;
-            map.put(ch, map.get(ch)-1);
-            if(map.get(ch) == 0) map.remove(ch);
+        for(int j=0;j<26;j++){
+            while(arr[j] > 0){
+                res[i++] = (char)(j + 'a');
+                arr[j]--;
+            }
         }
         return new String(res);
     }
