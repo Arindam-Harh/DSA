@@ -7,13 +7,10 @@ class Solution {
         }
         for(char ch : order.toCharArray()){
             if(map.containsKey(ch)){
-                while(map.get(ch) >= 1){
+                while(map.containsKey(ch)){
                     sb.append(ch);
                     map.put(ch, map.get(ch)-1);
-                    if(map.get(ch) == 0) {
-                        map.remove(ch);
-                        break;
-                    }
+                    if(map.get(ch) == 0) map.remove(ch);
                 }
             }
         }
