@@ -16,12 +16,11 @@ class Solution {
         }
         Arrays.sort(a, (x, y) -> Integer.compare(x[1], y[1]));
         int j = m-1;
-        int target = l/2;
         int count = 0;
         while(j > 0){
             l -= a[j--][1];
             count++;
-            if(l <= target) return count;
+            if(l <= arr.length/2) return count;
         }
         return -1;
     }
