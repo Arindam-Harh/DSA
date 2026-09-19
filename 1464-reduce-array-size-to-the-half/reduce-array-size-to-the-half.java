@@ -19,9 +19,8 @@ class Solution {
         int target = l/2;
         int count = 0;
         while(j > 0){
-            l -= a[j][1];
+            l -= a[j--][1];
             count++;
-            j--;
             if(l <= target) return count;
         }
         return -1;
