@@ -17,7 +17,7 @@ class Solution {
             String t = map.get(arr[i][0]);
             if(i == 0) t = Character.toUpperCase(t.charAt(0)) + t.substring(1);
             else t = Character.toLowerCase(t.charAt(0)) + t.substring(1);
-            sb.append(t+" ");
+            sb.append(t).append(" ");
         }
         return sb.toString().trim();
     }
