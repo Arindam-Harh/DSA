@@ -15,11 +15,8 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         for(int i=0;i<n;i++){
             String t = map.get(arr[i][0]);
-            if(i == 0){
-                t = Character.toUpperCase(t.charAt(0)) + t.substring(1);
-            }else {
-                t = Character.toLowerCase(t.charAt(0)) + t.substring(1);
-            }
+            if(i == 0) t = Character.toUpperCase(t.charAt(0)) + t.substring(1);
+            else t = Character.toLowerCase(t.charAt(0)) + t.substring(1);
             sb.append(t+" ");
         }
         return sb.toString().trim();
