@@ -1,8 +1,8 @@
 class Solution {
     public int minPartitions(String n) {
         int max = 0;
-        for(char c : n.toCharArray()){
-            max = Math.max(c-'0', max);
+        for(int i=0;i<n.length();i++){
+            max = Math.max(n.charAt(i)-'0', max);
         }
         return max;
     }
