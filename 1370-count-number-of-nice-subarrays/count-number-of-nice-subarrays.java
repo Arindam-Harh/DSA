@@ -11,15 +11,15 @@ class Solution {
             if(nums[i]%2 != 0) arr[j++] = i; 
         }
         int ans = 0;
-        for (int i = 0; i + k - 1 < odd; i++) {
-            int left = (i == 0) ? arr[i] + 1 : arr[i] - arr[i - 1];
+        for(int i=0;i+k-1<odd;i++){
+            int left = i == 0 ? arr[i] + 1 : arr[i]-arr[i-1];
             int right;
-            if (i + k < odd) {
-                right = arr[i + k] - arr[i + k - 1];
-            } else {
-                right = n - arr[i + k - 1];
+            if(i+k < odd){
+                right = arr[i+k] - arr[i+k-1];
+            }else{
+                right = n - arr[i+k-1];
             }
-            ans += left * right;
+            ans += right * left;
         }
         return ans;
     }
