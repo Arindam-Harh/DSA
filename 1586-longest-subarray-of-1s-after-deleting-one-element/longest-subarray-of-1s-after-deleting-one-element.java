@@ -12,7 +12,7 @@ class Solution {
         }
         int max = Integer.MIN_VALUE;
         for(int i=0;i<arr.length;i++){
-            if(i == 0) max = Math.max(+arr[i+1]-1, max);
+            if(i == 0) max = Math.max(arr[i+1]-1, max);
             else if(i == arr.length-1) max = Math.max(n-arr[i-1]-2, max);
             else max = Math.max(arr[i+1]-arr[i-1]-2, max);
         }
