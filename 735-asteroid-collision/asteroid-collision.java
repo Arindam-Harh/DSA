@@ -35,18 +35,9 @@ class Solution {
         }
         if(st.size() == 0) return new int[0];
         int arr[] = new int[st.size()];
-        int i = 0;
+        int i = st.size()-1;
         while(!st.isEmpty()){
-            arr[i++] = st.pop();
-        }
-        int left = 0;
-        int right = arr.length - 1;
-        while(left < right){
-            int temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
-            left++;
-            right--;
+            arr[i--] = st.pop();
         }
         return arr;
     }
