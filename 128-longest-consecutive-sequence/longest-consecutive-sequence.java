@@ -10,7 +10,7 @@ class Solution {
             if(curr - prev == 1 || curr - prev == -1) {
                 count++;
                 maxCount = Math.max(count, maxCount);
-            }else if(Math.abs(Math.abs(prev)-Math.abs(curr)) == 0) continue;
+            }else if(prev == curr) continue;
             else count = 1;
             prev = curr;
         }
