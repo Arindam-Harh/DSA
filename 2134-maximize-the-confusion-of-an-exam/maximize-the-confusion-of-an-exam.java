@@ -6,24 +6,22 @@ class Solution {
         int f = 0;
         int fMax = 0;
         int t = 0;
+        int left = 0;
         while(r < answerKey.length()){
+            // for consecutive FALSE
             if(answerKey.charAt(r) == 'F') f++;
             if(f > k){
                 if(answerKey.charAt(l) == 'F') f--;
                 l++;
             }
-            if(f <= k) tMax = Math.max(r - l + 1, tMax);
-            r++;
-        }
-        r = 0;
-        l = 0;
-        while(r < answerKey.length()){
+            if(f <= k) tMax = r - l + 1;
+            // for consecutive FALSE
             if(answerKey.charAt(r) == 'T') t++;
             if(t > k){
-                if(answerKey.charAt(l) == 'T') t--;
-                l++;
+                if(answerKey.charAt(left) == 'T') t--;
+                left++;
             }
-            if(t <= k) fMax = Math.max(r - l + 1, fMax);
+            if(t <= k) fMax = r - left + 1;
             r++;
         }
         return Math.max(fMax, tMax);
