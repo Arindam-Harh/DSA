@@ -17,10 +17,11 @@ class Solution {
         l.clear();
         int max = -1;
         for(var e : map.entrySet()){
-            max = Math.max(max, e.getValue());
-        }
-        for(var e : map.entrySet()){
-            if(e.getValue() == max) l.add(e.getKey()); 
+            if(e.getValue() > max) {
+                max = Math.max(max, e.getValue());
+                l.clear();
+                l.add(e.getKey());
+            }else if(e.getValue() == max) l.add(e.getKey());
         }
         Collections.sort(l);
         return l.get(0);
