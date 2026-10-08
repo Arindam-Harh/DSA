@@ -1,9 +1,9 @@
 class Solution {
     public String removeOuterParentheses(String s) {
-        if(s.length() <= 2) return "";
         int count = 0;
         int i = 0;
         int j = 1;
+        StringBuilder sb = new StringBuilder();
         HashSet<Integer> set = new HashSet<>();
         while(j < s.length()){
             if(s.charAt(i) == '(' && count == 0) count++;
@@ -19,7 +19,6 @@ class Solution {
             else if(s.charAt(j) == ')') count--;
             j++;
         }
-        StringBuilder sb = new StringBuilder();
         for(i=0;i<s.length();i++){
             if(!set.contains(i)) sb.append(s.charAt(i));
         }
