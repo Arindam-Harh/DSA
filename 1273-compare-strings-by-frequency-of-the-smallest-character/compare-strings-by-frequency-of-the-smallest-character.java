@@ -10,11 +10,9 @@ class Solution {
         }
         int res[] = new int[q.length];
         for(int i=0;i<q.length;i++){
-            int count = 0;
             for(int j=0;j<w.length;j++){
-                if(q[i] < w[j]) count++;
+                if(q[i] < w[j]) res[i]++;
             }
-            res[i] = count;
         }
         return res;
     }
