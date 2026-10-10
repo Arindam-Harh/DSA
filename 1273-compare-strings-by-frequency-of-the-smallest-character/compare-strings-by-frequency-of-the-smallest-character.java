@@ -19,14 +19,13 @@ class Solution {
         return res;
     }
     private int countFreq(String s){
-        if(s.length() <= 1) return s.length();
         int freq[] = new int[26];
         for(char c : s.toCharArray()){
             freq[c-'a']++;
         }
-        for(int i=0;i<26;i++){
-            if(freq[i] >= 1) return freq[i];
+        for(int count : freq){
+            if(count > 0) return count;
         }
-        return -1;
+        return 0;
     }
 }
